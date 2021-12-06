@@ -2,10 +2,18 @@ package com.dio.br;
 
 public abstract class Conta implements IConta {
 
+    private static final int AGENCIA_PADRAO = 1;
+    private static int SEQUENCIAL = 1;
 
-    private int agencia;
-    private int conta;
-    private int saldo;
+    protected int agencia;
+    protected int conta;
+    protected int saldo;
+
+
+    public Conta() {
+        this.agencia = AGENCIA_PADRAO;
+        this.conta = SEQUENCIAL++;
+    }
 
 
     public int getAgencia() {
