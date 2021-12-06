@@ -30,8 +30,15 @@ public abstract class Conta implements IConta {
 
     @Override
     public void transferir(double valor, Conta contaDestino) {
-        this.sacar(valor);
-        contaDestino.depositar(valor);
+        if(valor > this.saldo){
+            System.out.println("Saldo insuficiente!");
+        }else{
+            System.out.println("transferencia aprovada!");
+            this.sacar(valor);
+            contaDestino.depositar(valor);
+
+        }
+
     }
 
     protected void imprimirInfosComuns() {

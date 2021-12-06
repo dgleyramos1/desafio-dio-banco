@@ -7,9 +7,8 @@ public class Main {
         Conta cc = new ContaCorrente(ramos);
         cc.depositar(100);
         Conta poupanca = new ContaPoupanca(ramos);
+        cc.transferir(50, poupanca);
+        poupanca.transferir(49, cc);
 
-
-        cc.imprimirExtrato();
-        poupanca.imprimirExtrato();
     }
 }
